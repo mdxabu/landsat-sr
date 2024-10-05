@@ -1,0 +1,40 @@
+/* Center the entire body content */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* Style for the Google Sign-in button */
+.signin-btn {
+    text-decoration: none;
+    background-color: #4285F4; /* Google blue color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.signin-btn a{
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.signin-btn:hover {
+    background-color: #357AE8; /* Slightly darker blue on hover */
+}
+
+.signin-btn:active {
+    background-color: #2a65c2; /* Even darker on active click */
+}
