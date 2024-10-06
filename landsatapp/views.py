@@ -11,12 +11,7 @@ from .models import User
 
 def index(request):
     
-    if request.user.is_authenticated:
-        return render(request, "landsatapp/index.html", {"message": request.user.email})
-
-    # Everyone else is prompted to sign in
-    else:
-        return HttpResponseRedirect(reverse("login"))
+    return render(request, "landsatapp/index.html")
 
 
 def login_view(request):
@@ -30,7 +25,7 @@ def login_view(request):
         # Check if authentication successful
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("map"))
         else:
             return render(request, "landsatapp/login.html", {
                 "message": "Invalid email and/or password."
@@ -69,3 +64,7 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "landsatapp/register.html")
+
+@login_required
+def map_view(request):
+    return render(request,"landsatapp/map.html")
