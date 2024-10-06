@@ -5,14 +5,11 @@
     <head>
         <title>{% block title %}Landsat-sr{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'landsatapp/styles.css' %}">
-        
-        {% block script %}
-        {% endblock %}
+        {% block script %}{% endblock %}
     </head>
     <body>
         <div class="container">
-            {% block body %}
-            {% endblock %}
+            {% block body %}{% endblock %}
         </div>
     </body>
 </html>

@@ -1,4 +1,4 @@
-/* Center the entire body content */
+/* General styles for the body */
 body {
     display: flex;
     justify-content: center;
@@ -6,37 +6,137 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
+    background: linear-gradient(to right, #e0f7fa, #fff3e0); /* Light gradient background */
+    font-family: 'Arial', sans-serif;
 }
 
-/* Style for the Google Sign-in button */
+/* Container for the content */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+/* Sign-in button */
 .signin-btn {
     text-decoration: none;
-    background-color: #4285F4; /* Google blue color */
+    background-color: #4285F4; /* Primary color */
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
 }
-.signin-btn a{
-    text-decoration: none;
+
+.signin-btn a {
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+    text-decoration: none;
 }
 
 .signin-btn:hover {
-    background-color: #357AE8; /* Slightly darker blue on hover */
+    background-color: #34A853; /* Secondary color on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
 .signin-btn:active {
-    background-color: #2a65c2; /* Even darker on active click */
+    background-color: #2a65c2;
+    transform: scale(0.95); /* Slight shrink on click */
 }
 
+/* Heading styles */
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
 
+/* Paragraph styles */
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Form styles */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for inputs */
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for form */
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #4285F4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #34A853;
+    transform: scale(1.05);
+}
+
+.btn-primary:active {
+    background-color: #2a65c2;
+}
+
+/* Links styles */
+.link-style {
+    color: #4285F4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-style:hover {
+    color: #34A853;
+    text-decoration: underline;
+}
+
+/* For the map */
+#map {
+    height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to map */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .signin-btn {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}
