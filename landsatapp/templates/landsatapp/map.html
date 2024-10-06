@@ -25,14 +25,13 @@ crossorigin=""/>
             .setLatLng(e.latlng)
             .setContent("You clicked the map at " + e.latlng.toString())
             .openOn(map);
+            var Latitude = e.latlng.lat;
+            var Longitude = e.latlng.lng;
+            
     }
     
     map.on('click', onMapClick);
-    var Latitude = e.latlng.lat;
-    var Longitude = e.latlng.lng;
 
-    map.on('click', onMapClick);
-    
 </script>
 </div>
 {% endblock %}
