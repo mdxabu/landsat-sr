@@ -9,8 +9,11 @@ integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 {% block body %}
     <h1>Welcome to the Landsat Map</h1>
     <div id="map"></div>
+    <div id="notifications"></div>
 
     <script>
+        let latitude = 0;
+        let longitude = 0;
         var map = L.map('map').setView([13.10623, 440.271606], 13);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -24,8 +27,37 @@ integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
                 .setLatLng(e.latlng)
                 .setContent("You clicked the map at " + e.latlng.toString())
                 .openOn(map);
+                latitude = e.latlng.lat;
+                longitude = e.latlng.lng;
+                console.log(latitude, longitude);
+
         }
-        
+        console.log(latitude, longitude);
         map.on('click', onMapClick);
+
+        map.on('click', function() {
+            // Assume these variables are set from your map
+
+            
+            // Make a fetch request to your Django view with the shorter URL
+            fetch(`/landsat_pass/?latitude=${latitude}&longitude=${longitude}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('notifications').innerHTML = '';
+                    // Display the notifications in the console or update the HTML
+                    data.notifications.forEach(function(notification) {
+                        console.log(notification);
+                        // Append notification to the HTML element
+                        const notificationDiv = document.getElementById('notifications');
+                        notificationDiv.innerHTML += `<p>${notification}</p>`;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching Landsat pass notifications:', error);
+                });
+        });
+
+
+
     </script>
 {% endblock %}
