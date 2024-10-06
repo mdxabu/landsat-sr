@@ -1,7 +1,6 @@
 {% extends "landsatapp/layout.html" %}
 
 {% block body %}
-
     <h2>Register</h2>
 
     {% if message %}
@@ -22,6 +21,5 @@
         <input class="btn btn-primary" type="submit" value="Register">
     </form>
 
-    Already have an account? <a href="{% url 'login' %}">Log In here.</a>
-
+    Already have an account? <a href="{% url 'login' %}" class="link-style">Log In here.</a>
 {% endblock %}

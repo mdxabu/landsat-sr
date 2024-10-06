@@ -1,14 +1,9 @@
 {% extends "landsatapp/layout.html" %}
 {% load static %}
 
-
 {% block body %}
-
-{% if message %}
-<div>{{ message }}</div>
-{% endif %}
-
-        <h1>Landsat Reflectance Data: On the Fly and at Your Fingertips</h1>
-        <p>Welcome to the Landsat Reflectance Data application. Here you can access and analyze Landsat data quickly and efficiently.</p>
-        <button class="signin-btn"><a href="{% url 'login' %}"> Sign in</a></button>
+    <h1>Landsat Reflectance Data: On the Fly and at Your Fingertips</h1>
+    <p>Welcome to the Landsat Reflectance Data application. Here you can access and analyze Landsat data quickly and efficiently.</p>
+    
+    <button class="signin-btn"><a href="{% url 'login' %}">Sign in</a></button>
 {% endblock %}
