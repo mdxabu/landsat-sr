@@ -125,6 +125,26 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to map */
 }
 
+#notifications {
+    display: none;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Individual notification styling */
+#notifications p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    background-color: #e9f5ff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     h1 {
